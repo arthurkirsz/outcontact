@@ -1,0 +1,35 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.box { @include border-radius(10px); }
+
+
+
+html{
+	font-family: $font-stack;
+	font-size: 14px;
+	background: #eee;
+	color: $primary-color;
+	body {
+		header {
+			background: #666;
+			height: 30px;
+		}
+
+		section {
+
+		}
+
+		footer {
+
+		}
+	}
+}

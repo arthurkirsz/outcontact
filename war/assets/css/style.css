@@ -1,0 +1,14 @@
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px; }
+
+html {
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  background: #eee;
+  color: #333333; }
+  html body header {
+    background: #666;
+    height: 30px; }
