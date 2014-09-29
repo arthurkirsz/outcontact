@@ -18,9 +18,10 @@ public class ContactValidator implements Validator {
 	public void validate(Object obj, Errors errors) {
 		ContactModel contact = (ContactModel) obj;
 		
-		ValidationUtils.rejectIfEmpty(errors, "m_contactFirstName", "valid.emptyFirstName");
-		ValidationUtils.rejectIfEmpty(errors, "m_contactLastName", "valid.emptyLastName");
-		ValidationUtils.rejectIfEmpty(errors, "m_contactMail", "valid.emptyMail");
+		ValidationUtils.rejectIfEmpty(errors, "m_contactFirstName", "valid.emptyField");
+		ValidationUtils.rejectIfEmpty(errors, "m_contactLastName", "valid.emptyField");
+		ValidationUtils.rejectIfEmpty(errors, "m_contactMail", "valid.emptyField");
+		ValidationUtils.rejectIfEmpty(errors, "m_contactBirthDate", "valid.emptyField");
 		
 		if (!contact.getM_contactMail().equals("") && !contact.getM_contactMail().matches(mailRegex)) {
 			errors.rejectValue("m_contactMail", "valid.correctMail");

@@ -1,6 +1,7 @@
 package fr.esiea.outcontact.model;
 
 import java.text.SimpleDateFormat;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -16,8 +17,10 @@ public class ContactModel {
 	
 	private List<AddressModel> m_contactAdressList;
 	private static SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy");
-	
+
 	public ContactModel() {
+		m_contactKey = 0;
+		m_contactBirthDate = new Date();
 	}
 
 	public ContactModel(String m_contactLastName, String m_contactFirstName,
@@ -31,17 +34,31 @@ public class ContactModel {
 		this.m_contactKey = m_contactKey;
 	}
 	
-	public String toString() {		
-		return  "firstName:" + m_contactFirstName;
+	class FirstNameComparator implements Comparator<ContactModel> {
+
+		@Override
+		public int compare(ContactModel contact1, ContactModel contact2) {
+			return contact1.getM_contactFirstName().compareToIgnoreCase(contact2.getM_contactFirstName());
+		}
+		
+	}
+	
+	class LastNameComparator implements Comparator<ContactModel> {
+
+		@Override
+		public int compare(ContactModel contact1, ContactModel contact2) {
+			return contact1.getM_contactLastName().compareToIgnoreCase(contact2.getM_contactLastName());
+		}
+		
 	}
 
-	/*public String toString() {		
+	public String toString() {		
 		return  "firstName:" + m_contactFirstName
 				+ "lastName:" + m_contactLastName
-				+ "mail:" + m_contactMail + "\n"
+				+ "mail:" + m_contactMail
 				+ "birthDate:" + formater.format(m_contactBirthDate)
 				+ "active:" + (m_contactActive ? "true" : "false");
-	}*/
+	}
 
 	public String getM_contactLastName() {
 		return m_contactLastName;
