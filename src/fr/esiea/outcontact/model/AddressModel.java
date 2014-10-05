@@ -1,8 +1,10 @@
 package fr.esiea.outcontact.model;
 
-import java.util.Comparator;
-
-public class AddressModel {
+/**
+ * @author david
+ * This class represents the address model 
+ */
+public class AddressModel implements Comparable<AddressModel> {
 	
 	private String m_addressNumber;
 	private String m_addressStreet;
@@ -15,30 +17,25 @@ public class AddressModel {
 	}
 
 	public AddressModel(String m_addressNumber, String m_addressStreet,
-			String m_addressZipCode, String m_addressCity, Integer addressKey) {
+			String m_addressZipCode, String m_addressCity, Integer m_addressKey) {
 		this.m_addressNumber = m_addressNumber;
 		this.m_addressStreet = m_addressStreet;
 		this.m_addressZipCode = m_addressZipCode;
 		this.m_addressCity = m_addressCity;
-		this.m_addressKey = addressKey;
-	}
-
-	class NumberComparator implements Comparator<AddressModel> {
-
-		@Override
-		public int compare(AddressModel address1, AddressModel address2) {
-			return address1.getM_addressNumber().compareToIgnoreCase(address2.getM_addressNumber());
-		}
-		
+		this.m_addressKey = m_addressKey;
 	}
 	
-	class StreetComparator implements Comparator<AddressModel> {
-
-		@Override
-		public int compare(AddressModel address1, AddressModel address2) {
-			return address1.getM_addressStreet().compareToIgnoreCase(address2.getM_addressStreet());
+	@Override
+	public int compareTo(AddressModel address) {
+		if (m_addressNumber.equals(address.getM_addressNumber())
+				&& m_addressStreet.equals(address.getM_addressStreet())
+				&& m_addressZipCode.equals(address.getM_addressZipCode())
+				&& m_addressCity.equals(address.getM_addressCity())) {
+			return 0;
 		}
-		
+		else {
+			return m_addressStreet.compareTo(address.getM_addressStreet());
+		}
 	}
 
 	public String toString() {

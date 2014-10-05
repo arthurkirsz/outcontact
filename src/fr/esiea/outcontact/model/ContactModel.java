@@ -1,11 +1,15 @@
 package fr.esiea.outcontact.model;
 
 import java.text.SimpleDateFormat;
-import java.util.Comparator;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class ContactModel {
+/**
+ * @author david
+ * This class represents the contact model
+ */
+public class ContactModel implements Comparable<ContactModel> {
 	
 	private String m_contactLastName;
 	private String m_contactFirstName;
@@ -15,12 +19,11 @@ public class ContactModel {
 	//Integer key of this contact in the contact map
 	private Integer m_contactKey;
 	
-	private List<AddressModel> m_contactAdressList;
-	private static SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy");
+	private Integer m_contactBillingAddress;
+	private List<Integer> m_contactDeliveryAdressList = new ArrayList<Integer>();
+	private static SimpleDateFormat formater = new SimpleDateFormat("yyy-MM-dd");
 
 	public ContactModel() {
-		m_contactKey = 0;
-		m_contactBirthDate = new Date();
 	}
 
 	public ContactModel(String m_contactLastName, String m_contactFirstName,
@@ -32,34 +35,37 @@ public class ContactModel {
 		this.m_contactBirthDate = m_contactBirthDate;
 		this.m_contactActive = m_contactActive;
 		this.m_contactKey = m_contactKey;
+		this.m_contactDeliveryAdressList = new ArrayList<Integer>();
 	}
 	
-	class FirstNameComparator implements Comparator<ContactModel> {
-
-		@Override
-		public int compare(ContactModel contact1, ContactModel contact2) {
-			return contact1.getM_contactFirstName().compareToIgnoreCase(contact2.getM_contactFirstName());
+	@Override
+	public int compareTo(ContactModel contact) {
+		if (m_contactLastName.equals(contact.getM_contactLastName())
+				&& m_contactFirstName.equals(contact.getM_contactFirstName())
+				&& m_contactMail.equals(contact.getM_contactMail())) {
+			return 0;
 		}
-		
-	}
-	
-	class LastNameComparator implements Comparator<ContactModel> {
-
-		@Override
-		public int compare(ContactModel contact1, ContactModel contact2) {
-			return contact1.getM_contactLastName().compareToIgnoreCase(contact2.getM_contactLastName());
+		else {
+			return m_contactFirstName.compareTo(contact.getM_contactFirstName());
 		}
-		
 	}
 
 	public String toString() {		
 		return  "firstName:" + m_contactFirstName
 				+ "lastName:" + m_contactLastName
 				+ "mail:" + m_contactMail
-				+ "birthDate:" + formater.format(m_contactBirthDate)
-				+ "active:" + (m_contactActive ? "true" : "false");
+				+ "birthDate:" + formater.format(m_contactBirthDate);
+	}
+	
+	/**
+	 * Return string birth date 
+	 * @return String
+	 */
+	public String strBirthDate() {
+		return formater.format(m_contactBirthDate);
 	}
 
+	//Getters and Setters
 	public String getM_contactLastName() {
 		return m_contactLastName;
 	}
@@ -108,12 +114,21 @@ public class ContactModel {
 		this.m_contactKey = m_contactKey;
 	}
 
-	public List<AddressModel> getM_contactAdressList() {
-		return m_contactAdressList;
+	public Integer getM_contactBillingAddress() {
+		return m_contactBillingAddress;
 	}
 
-	public void setM_contactAdressList(List<AddressModel> m_contactAdressList) {
-		this.m_contactAdressList = m_contactAdressList;
+	public void setM_contactBillingAddress(Integer m_contactBillingAddress) {
+		this.m_contactBillingAddress = m_contactBillingAddress;
+	}
+
+	public List<Integer> getM_contactDeliveryAdressList() {
+		return m_contactDeliveryAdressList;
+	}
+
+	public void setM_contactDeliveryAdressList(
+			List<Integer> m_contactDeliveryAdressList) {
+		this.m_contactDeliveryAdressList = m_contactDeliveryAdressList;
 	}
 	
 }

@@ -6,6 +6,10 @@ import org.springframework.validation.Validator;
 
 import fr.esiea.outcontact.model.AddressModel;
 
+/**
+ * @author david
+ * This class manages the validation of the createAddress and newContactAddress form 
+ */
 public class AddressValidator implements Validator {
 	
 	private static String zipCodeRegex = "^\\d{5}(?:[-\\s]\\d{4})?$";

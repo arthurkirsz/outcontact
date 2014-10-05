@@ -10,8 +10,12 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/lib/foundation.min.css">
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	</head>
+	<div>
+		<a href=""><spring:message code="contactAddressForm.addNewAddress" /></a>
+		<a href="existingContactAddress?contact=${contactId}&type=${addressType}"><spring:message code="contactAddressForm.addExistingAddress" /></a>
+	</div>
 	<body>
-		<h2><spring:message code="createAddressForm.title" /></h2>
+		<h2><spring:message code="${strTitle}" /></h2>
 
 		<form:form method="POST" commandName="addressModel">
 			<table>
