@@ -51,7 +51,7 @@ public class ModifyAddressController {
      * @return ModelAndView
      */
     @RequestMapping(value = "/modifyAddress", method = RequestMethod.POST)
-	public ModelAndView modifyContact
+	public ModelAndView modifyAddress
 	(
 		@ModelAttribute("addressModel") AddressModel adress,
 		@RequestParam(value="address", required=true) Integer addressId,

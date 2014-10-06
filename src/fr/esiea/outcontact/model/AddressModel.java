@@ -34,7 +34,7 @@ public class AddressModel implements Comparable<AddressModel> {
 			return 0;
 		}
 		else {
-			return m_addressStreet.compareTo(address.getM_addressStreet());
+			return -1;
 		}
 	}
 

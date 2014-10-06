@@ -42,11 +42,12 @@ public class ContactModel implements Comparable<ContactModel> {
 	public int compareTo(ContactModel contact) {
 		if (m_contactLastName.equals(contact.getM_contactLastName())
 				&& m_contactFirstName.equals(contact.getM_contactFirstName())
-				&& m_contactMail.equals(contact.getM_contactMail())) {
+				&& m_contactMail.equals(contact.getM_contactMail())
+				&& m_contactBirthDate.compareTo(contact.getM_contactBirthDate()) == 0) {
 			return 0;
 		}
 		else {
-			return m_contactFirstName.compareTo(contact.getM_contactFirstName());
+			return -1;
 		}
 	}
 
