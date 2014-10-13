@@ -73,6 +73,12 @@ public class ModifyAddressController {
     		}
     		
     		model.put("addressList", AddressService.listAddresses("street"));
+    		
+    		AddressModel thisAddress = AddressService.getAddressById(addressId);
+        	
+            if (thisAddress != null) {
+            	model.put("selectedAddress", thisAddress);
+            }
     	}
     	return new ModelAndView(resultJsp, model);
     }

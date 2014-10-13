@@ -15,16 +15,18 @@ public class AddressDAO {
 	
 	static {
 		m_addressesMap.put(1, new AddressModel("1","avenue la ronde", "75010", "Paris", 1));
-		m_addressesMap.put(2, new AddressModel("256","rue du général leclerc", "75014", "Paris", 2));	
+		m_addressesMap.put(2, new AddressModel("256","rue du genéral leclerc", "75014", "Paris", 2));	
 	}
 
 	/**
-	 * Create this address in the hash map
+	 * Create this address in the hash map and return this address id
 	 * @param address
+	 * @return int
 	 */
-	public static void createAddress(AddressModel address) {
+	public static int createAddress(AddressModel address) {
 		address.setM_addressKey(m_addressKey++);
 		m_addressesMap.put(address.getM_addressKey(), address);
+		return address.getM_addressKey();
 	}
 
 	/**

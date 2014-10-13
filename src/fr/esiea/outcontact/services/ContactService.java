@@ -30,12 +30,13 @@ public class ContactService {
 	}
 	
 	/**
-	 * Create this contact
+	 * Create this contact and return this contact integer
 	 * @param contact
+	 * @return int
 	 */
-    public static void createContact(ContactModel contact) {
+    public static int createContact(ContactModel contact) {
     	contact.setM_contactActive(true);
-    	ContactDAO.addContact(contact); 
+    	return ContactDAO.addContact(contact); 
     }
     
 	/**
@@ -53,7 +54,6 @@ public class ContactService {
 	 */
 	public static void updateContactInformations(Integer updateContactId, ContactModel contact) {
 		ContactModel oldContact = getContactById(updateContactId);
-
 		//Update contact only if oldContact is different of newContact
 		if (oldContact.compareTo(contact) != 0) {
 			contact.setM_contactKey(oldContact.getM_contactKey());

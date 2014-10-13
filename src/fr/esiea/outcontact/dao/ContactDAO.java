@@ -30,18 +30,21 @@ public class ContactDAO {
 		
 		ContactModel contact1 = new ContactModel("Dupont","Jean", "j.dupont@wanadoo.fr", date1, true, 1);
 		contact1.getM_contactDeliveryAdressList().add(1);
+		contact1.getM_contactDeliveryAdressList().add(2);
 		
 		m_contactsMap.put(1, contact1);
 		m_contactsMap.put(2, new ContactModel("Ambroise","Marine", "m.ambroise@gmail.com", date2, true, 2));	
 	}
 	
 	/**
-	 * Add this contact in the contacts map
+	 * Add this contact in the contacts map and return this contact id
 	 * @param contact
+	 * @return int
 	 */
-	public static void addContact(ContactModel contact) {
+	public static int addContact(ContactModel contact) {
 		contact.setM_contactKey(m_contactKey++);
 		m_contactsMap.put(contact.getM_contactKey(), contact);
+		return contact.getM_contactKey();
 	}
 	
 	/**

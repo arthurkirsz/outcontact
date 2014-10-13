@@ -58,8 +58,14 @@ public class CreateAddressController {
     		resultJsp = "createAddress";
     	} 
     	else {
-    		AddressService.createAddress(address, null, null);    	
-    		model.put("addressList", AddressService.listAddresses("street"));	
+    		Integer addressId = AddressService.createAddress(address, null, null);    	
+    		model.put("addressList", AddressService.listAddresses("street"));
+    		
+    		AddressModel thisAddress = AddressService.getAddressById(addressId);
+        	
+            if (thisAddress != null) {
+            	model.put("selectedAddress", thisAddress);
+            }
     	}
     	return new ModelAndView(resultJsp, model);
     }

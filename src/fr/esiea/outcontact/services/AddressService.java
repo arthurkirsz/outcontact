@@ -75,16 +75,20 @@ public class AddressService {
 	/**
 	 * This method allows to create this address 
 	 * and links (or not) this address with the contact with this contactId
+	 * Return this address id
 	 * @param address
 	 * @param contactId
+	 * @return int
 	 */
-	public static void createAddress(AddressModel address, Integer contactId, String addressType) {
-		AddressDAO.createAddress(address);
+	public static int createAddress(AddressModel address, Integer contactId, String addressType) {
+		Integer addressId = AddressDAO.createAddress(address);
 		
 		//If user wants to create an address for a contact
 		if (contactId != null && addressType != null) {
 			ContactService.addContactAddress(contactId, address.getM_addressKey(), addressType);
 		}
+		
+		return addressId;
 	}
 
 	/**
@@ -106,7 +110,6 @@ public class AddressService {
 		//Update address only if oldAddress is different of newAddress
 		if (oldAddress.compareTo(address) != 0) {
 			address.setM_addressKey(oldAddress.getM_addressKey());
-			
 			AddressDAO.updateAddress(address);
 		}
 	}
