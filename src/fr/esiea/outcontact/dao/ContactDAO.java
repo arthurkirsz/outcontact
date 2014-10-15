@@ -28,7 +28,7 @@ public class ContactDAO {
 			e.printStackTrace();
 		}
 		
-		ContactModel contact1 = new ContactModel("Dupont","Jean", "j.dupont@wanadoo.fr", date1, true, 1);
+		ContactModel contact1 = new ContactModel("Marault","Kévin", "j.dupont@wanadoo.fr", date1, true, 1);
 		contact1.getM_contactDeliveryAdressList().add(1);
 		contact1.getM_contactDeliveryAdressList().add(2);
 		
