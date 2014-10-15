@@ -1,0 +1,49 @@
+.blue-toggle {
+	margin: auto;
+	display: block;
+	width: 420px;
+	top: 30px;
+
+	button {
+		background: #232323;
+		border: 1px solid #0088CC;
+		cursor:pointer;
+
+		&:hover {
+			background: #27405C;
+		} 
+
+	}
+
+	button.active {
+		background: #0050A7;
+		border: 1px solid #0088CC;
+		cursor:pointer;
+
+
+		a {
+			color: #eee; 
+			font-weight: 300;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+			
+		&:hover {
+			background: #0050A7;
+		} 
+	}
+
+
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+
+}

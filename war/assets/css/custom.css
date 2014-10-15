@@ -1,0 +1,27 @@
+.blue-toggle {
+  margin: auto;
+  display: block;
+  width: 420px;
+  top: 30px; }
+  .blue-toggle button {
+    background: #232323;
+    border: 1px solid #0088CC;
+    cursor: pointer; }
+    .blue-toggle button:hover {
+      background: #27405C; }
+  .blue-toggle button.active {
+    background: #0050A7;
+    border: 1px solid #0088CC;
+    cursor: pointer; }
+    .blue-toggle button.active a {
+      color: #eee;
+      font-weight: 300;
+      text-decoration: none; }
+      .blue-toggle button.active a:hover {
+        text-decoration: none; }
+    .blue-toggle button.active:hover {
+      background: #0050A7; }
+  .blue-toggle a {
+    text-decoration: none; }
+    .blue-toggle a:hover {
+      text-decoration: none; }
