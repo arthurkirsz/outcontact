@@ -51,118 +51,31 @@
                     </button>
                     <a class="navbar-brand" href="/">OutContact</a>
                 </div>
-                <!-- Top Menu Items -->
-                <ul class="nav navbar-right top-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                        <ul class="dropdown-menu message-dropdown">
-                            <li class="message-preview">
-                                <a href="#">
-                                    <div class="media">
-                                        <span class="pull-left">
-                                            <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                        </span>
-                                        <div class="media-body">
-                                            <h5 class="media-heading"><strong>John Smith</strong>
-                                            </h5>
-                                            <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                            <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="message-preview">
-                                <a href="#">
-                                    <div class="media">
-                                        <span class="pull-left">
-                                            <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                        </span>
-                                        <div class="media-body">
-                                            <h5 class="media-heading"><strong>John Smith</strong>
-                                            </h5>
-                                            <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                            <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="message-preview">
-                                <a href="#">
-                                    <div class="media">
-                                        <span class="pull-left">
-                                            <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                        </span>
-                                        <div class="media-body">
-                                            <h5 class="media-heading"><strong>John Smith</strong>
-                                            </h5>
-                                            <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                            <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="message-footer">
-                                <a href="#">Read All New Messages</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                        <ul class="dropdown-menu alert-dropdown">
-                            <li>
-                                <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                            </li>
-                            <li>
-                                <a href="#">Alert Name Alert Badge</span></a>
-                            </li>a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                            </li>
-                            <li>
-                                <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                            </li>
-                            <li>
-                                <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                            </li>
-                            <li>
-                                <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">View All</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                
                 <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav side-nav" id="item-list">
                     	<li>
-                            <div class="btn-group" style="left: 20px;top: 15px;margin-bottom: 25px;">
-                              <button type="button" class="btn btn-default" style="background: #0050A7;
-border: 1px solid #0088CC;">
-<a href="/" style="color: #eee; font-weight: 300;">Contacts</a></button>
-                              <button type="button" class="btn btn-default" style="background: #232323;
-border: 1px solid #0088CC;"><a href="/?list=address">Adresses</a></button>
+                            <div class="btn-group blue-toggle menu-toggle">
+                                <c:if test="${contactList!=null}">
+                                    <button type="button" class="btn btn-default active">
+                                        <a href="/">Contacts</a>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <a href="/?list=address">Adresses</a>
+                                    </button>
+                                </c:if>
+                                <c:if test="${addressList!=null}">
+                                    <button type="button" class="btn btn-default">
+                                        <a href="/">Contacts</a>
+                                    </button>
+                                    <button type="button" class="btn btn-default active">
+                                        <a href="/?list=address">Adresses</a>
+                                    </button>
+                                </c:if>
                     		</div>
     					</li>
-    					<li>               
+    					<li>
                           <form class="navbar-form navbar-left" role="search" style="margin-left: auto;margin-right: auto;">
                             <div class="form-group">
                               <input type="text" class="form-control" placeholder="Recherche..." id="search"
@@ -182,10 +95,14 @@ border: 1px solid #0088CC;"><a href="/?list=address">Adresses</a></button>
 
                         <li style="">
                             <c:if test="${contactList!=null}">
-                                <a href="createContact" id="create-contact" style="color: #08C; text-align:center;text-decoration:underline; ">Créer un contact</a>
+                                <button type="button" class="btn btn-default active" style="left: 45px;position: relative;">
+                                    <a href="createContact" id="create-contact">Créer un contact</a>
+                                </button>
                             </c:if>
                             <c:if test="${addressList!=null}">
-                                <a href="createAddress">Créer une adresse</a>
+                                <button type="button" class="btn btn-default active" style="left: 40px;position: relative;">
+                                    <a href="createAddress">Créer une adresse</a>
+                                </button>
                             </c:if>
                         </li>
     					
@@ -209,10 +126,7 @@ border: 1px solid #0088CC;"><a href="/?list=address">Adresses</a></button>
                 <!-- /.navbar-collapse -->
             </nav>
 
-            <div id="page-wrapper" style="min-height: 600px;
-                    background-color: gray;
-background-image: linear-gradient(90deg, #586C79 50%, rgba(88,108,121,.9) 50%);
-background-size: 15px 15px;">
+            <div id="page-wrapper" style="min-height: 600px;background-color: gray;background-image: linear-gradient(90deg, #586C79 50%, rgba(88,108,121,.9) 50%);background-size: 15px 15px;">
 
                 
                     
@@ -232,77 +146,66 @@ background-size: 15px 15px;">
                         margin : 0px;
                     }
                 </style>
-                <!-- Page Heading 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Dashboard <small>Statistics Overview</small>
-                        </h1>
-                    </div>
-                </div>-->
-                <!-- Button trigger modal -->
-                <!-- <button data-toggle="modal" data-target="#myModal" 
-                style="position: fixed;
-						bottom: 10px;
-						left: 10px;
-						border-radius: 2px;
-						border: none;
-						color: #fff;
-						background: #0088CC;
-						vertical-align: middle;
-						background-repeat: no-repeat;
-						fill: currentcolor;
-						height: 44px;">
-                  Créer un enregistrement
-                </button> -->
                 
                 <div class="row" style="background: #006BA0;height: 25px;border-bottom: 2px solid rgba(0,0,0,.2);line-height: 40px;text-indent: 2%;">
                     <div class="col-lg-12">
 
                     </div>
                 </div>
+                <c:if test="${selectedContact==null && selectedAddress==null}">
+                    <div class="row">
+                        <h1 style="font-size: 45px;text-align: center;font-weight: 100;color: #fff;margin: 35px auto 15px;">
+                            An experimental Contact App in J2EE
+                        </h1>
+                        <h2 style="text-align: center;font-weight: 100; color: #aaa;">
+                            By David Porcheron, Arthur Kirsz and Warren Levin
+                        </h2>
+
+                        <h2></h2>
+                        <p></p>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">                  
+                            <div class="tube">
+                                <div class="bolhas-top bolha1"></div>
+                                <div class="bolhas-top bolha2"></div>
+                                <div class="bolhas-top bolha3"></div>
+                                <div class="bolhas-top bolha4"></div>
+                                <div class="bolhas-top bolha5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </c:if>
+
+
                 <c:if test="${selectedContact!=null}">
 
-                    <div class="row content-wrapper" style="background: #586C79;
-                    background-color: gray;
-background-image: linear-gradient(90deg, #586C79 50%, rgba(88,108,121,.9) 50%);
-background-size: 15px 15px;">
+                    <div class="row content-wrapper" style="background: #586C79;background-color: gray;background-image: linear-gradient(90deg, #586C79 50%, rgba(88,108,121,.9) 50%);background-size: 15px 15px;">
 
-                        <div class="col-lg-6" style="background: #586C79; height: 100%;min-height: 580px;
-                        background-color: gray;
-                        background-image: linear-gradient(90deg, #586C79 50%, rgba(88,108,121,.9) 50%);
-                        background-size: 15px 15px;">
+                        <div class="col-lg-6" style="background: #586C79; height: 100%;min-height: 580px;background-color: gray;background-image: linear-gradient(90deg, #586C79 50%, rgba(88,108,121,.9) 50%);background-size: 15px 15px;">
 
                             <div style="padding: 10px;">
 
                                     <div style="border-radius: 100px; margin:40px auto 20px; overflow:hidden;width: 150px;">
-                                        <img src="#" class="randomuser" width="150" height="150px">
+                                        <img src="/assets/images/user.png" class="randomuser" width="150" height="150px">
                                     </div>
-                                    <h1 style="font-size: 45px;
-text-align: center;
-font-weight: 100;
-color: #fff;
-margin: 35px 0 15px;">
+                                    <h1 style="font-size: 45px;text-align: center;font-weight: 100;color: #fff;margin: 35px 0 15px;">
                                         <c:out value="${selectedContact.m_contactFirstName}"/> <c:out value="${selectedContact.m_contactLastName}"/>
                                     </h1>
                                     <h2 style="text-align: center;">
-                                        <a href="mailto:${selectedContact.m_contactMail}" style="font-size: 16px;
-color: #bbb;
-letter-spacing: 2px;
-font-weight: 100;"><c:out value="${selectedContact.m_contactMail}"/></a>
+                                        <a href="mailto:${selectedContact.m_contactMail}" style="font-size: 16px;color: #bbb;letter-spacing: 2px;font-weight: 100;"><c:out value="${selectedContact.m_contactMail}"/></a>
                                     </h2>
                                 
-                                    <h3 style="text-align: center;
-font-size: 16px;
-color: #353535;">
+                                    <h3 style="text-align: center;font-size: 16px;color: #353535;">
+                                        <img src="/assets/images/cake.png" style="width: 20px;position: relative;top: -6px;left: -3px;">
                                         <fmt:formatDate value="${selectedContact.m_contactBirthDate}" pattern="dd/MM/yyyy" />
                                     </h3>
 
-                                    <div style="margin: 50px auto; width: 330px;">
+                                    <div style="margin: 50px auto; width: 310px;">
                                         <a href="modifyContact?contact=${selectedContact.m_contactKey}" class="btn btn-primary">
                                             Modifier le contact
                                         </a>
-                                        <a href="/?deleteContact=${selectedContact.m_contactKey}" class="btn btn-primary">
+                                        <a href="/?deleteContact=${selectedContact.m_contactKey}" onclick="javascript:return confirm('Attention, cette action est irréversible. Continuer ?');" class="btn btn-primary">
                                             Supprimer le contact
                                         </a>
                                     </div>
@@ -315,20 +218,7 @@ color: #353535;">
                             <h3 style="font-size: 14px;text-transform: uppercase;border-top: 1px solid #000;border-bottom: 1px solid #000;padding: 8px 0;width: 95%;">
                                 <spring:message code="index.billingAddress" /> 
                                 <a href="newContactAddress?contact=${selectedContact.m_contactKey}&type=billing" 
-                                style="${btnAddBillingAddressVisible};
-                                        float: right;
-                                        display: block;
-                                        background: #0088CC;
-                                        color: #fff;
-                                        border-radius: 20px;
-                                        width: 23px;
-                                        height: 23px;
-                                        margin-top: -3px;
-
-                                        margin-right: 5px;
-                                        text-align: center;
-                                        line-height: 20px;
-                                        font-size: 17px;">
+                                style="${btnAddBillingAddressVisible};" class="plus-button">
                                 +</a> 
                             </h3>
                             <ul style="margin: 0px;padding: 0px;">
@@ -338,34 +228,8 @@ color: #353535;">
                                             
                                             <img src='https://maps.googleapis.com/maps/api/staticmap?center=${deliveryAddressItem}&zoom=13&size=600x150&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284' style="position:absolute;top:0px;left:0px;">
 
-                                            <address style="
-                                            position: absolute;
-                                            top: 0px;
-                                            left: 0px;
-                                            display: block;
-                                            background: rgba(0,0,0,.7);
-                                            color: #fff;
-                                            padding: 10px;
-                                            height: 100px;
-                                            width: 100%;
-                                            text-align: center;
-                                            line-height: 40px;
-                                            font-size: 25px;
-                                            font-weight: 100;
-                                            letter-spacing: 1px;
-    ">
-                                                <c:out value="${billingAddressItem}"/> <a href="/?contact=${selectedContact.m_contactKey}&deleteAddress=${billingAddressItem.m_addressKey}&type=billing" style="position: absolute;
-top: 2px;
-right: 2px;
-display: block;
-background: #222;
-color: #fff;
-border-radius: 23px;
-width: 23px;
-height: 23px;
-line-height: 20px;
-font-size: 16px;
-font-weight: 100;">x</a>
+                                            <address style="position: absolute;top: 0px;left: 0px;display: block;background: rgba(0,0,0,.7);color: #fff;padding: 10px;height: 100px;width: 100%;text-align: center;line-height: 40px;font-size: 25px;font-weight: 100;letter-spacing: 1px;">
+                                                <c:out value="${billingAddressItem}"/> <a href="/?contact=${selectedContact.m_contactKey}&deleteAddress=${billingAddressItem.m_addressKey}&type=billing" onclick="javascript:return confirm('Attention, cette action est irréversible. Continuer ?');" class="cross-button">x</a>
                                             </address>
 
                                         </li>
@@ -379,19 +243,7 @@ font-weight: 100;">x</a>
                             <h3 style="font-size: 14px;text-transform: uppercase;border-top: 1px solid #000;border-bottom: 1px solid #000;padding: 8px 0;width: 95%;">
                                 <spring:message code="index.deliveryAddress"/> 
                                 <a href="newContactAddress?contact=${selectedContact.m_contactKey}&type=delivery" 
-                                style="
-                                        float: right;
-                                        display: block;
-                                        background: #0088CC;
-                                        color: #fff;
-                                        border-radius: 20px;
-                                        width: 23px;
-                                        height: 23px;
-                                        margin-top: -3px;
-                                        margin-right: 5px;
-                                        text-align: center;
-                                        line-height: 20px;
-                                        font-size: 17px; ">+</a>
+                                class="plus-button">+</a>
                             </h3>
 
                             <ul class="adress-list" style="margin: 0px;padding: 0px;">
@@ -401,36 +253,9 @@ font-weight: 100;">x</a>
                                         
                                         <img src='https://maps.googleapis.com/maps/api/staticmap?center=${deliveryAddressItem}&zoom=13&size=600x150&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284' style="position:absolute;top:0px;left:0px;">
 
-                                        <address style="
-                                        position: absolute;
-                                        top: 0px;
-                                        left: 0px;
-                                        display: block;
-                                        background: rgba(0,0,0,.7);
-                                        color: #fff;
-                                        padding: 10px;
-                                        height: 100px;
-                                        width: 100%;
-                                        text-align: center;
-                                        line-height: 40px;
-                                        font-size: 25px;
-                                        font-weight: 100;
-                                        letter-spacing: 1px;
-">
+                                        <address style="position: absolute;top: 0px;left: 0px;display: block;background: rgba(0,0,0,.7);color: #fff;padding: 10px;height: 100px;width: 100%;text-align: center;line-height: 40px;font-size: 25px;font-weight: 100;letter-spacing: 1px;">
                                             <c:out value="${deliveryAddressItem}"/> 
-                                            <a onclick="javascript:return confirm('Attention, cette action est irréversible. Continuer ?');" href="/?contact=${selectedContact.m_contactKey}&deleteAddress=${deliveryAddressItem.m_addressKey}&type=delivery" style="position: absolute;
-top: 2px;
-right: 2px;
-display: block;
-background: #222;
-color: #fff;
-border-radius: 23px;
-width: 23px;
-height: 23px;
-line-height: 20px;
-font-size: 16px;
-font-weight: 100;
-                                         ">x</a>
+                                            <a onclick="javascript:return confirm('Attention, cette action est irréversible. Continuer ?');" href="/?contact=${selectedContact.m_contactKey}&deleteAddress=${deliveryAddressItem.m_addressKey}&type=delivery" class="cross-button">x</a>
                                         </address>
 
                                     </li>
@@ -454,33 +279,14 @@ font-weight: 100;
                             
                         
 
-                            <div style="z-index: 99;
-                                        color: #fff;
-                                        background-color: rgba(0,0,0, .7);
-
-                                        padding: 15px 20px;
-                                        height: 220px;
-                                        opacity:1;
-                                        position:absolute;
-                                        top: 25%;
-                                        left: 25%;
-                                        right:25%;">
-                                <h1 style="font-size: 4rem;
-text-align: center;
-font-weight: 100;
-color: #fff;
-margin: 35px 0 15px;"><c:out value="${selectedAddress.m_addressNumber}"/> <c:out value="${selectedAddress.m_addressStreet}"/></h1>
-                                <h2 style="text-align:center;font-size: 25px;
-color: #bbb;
-letter-spacing: 2px;
-font-weight: 100;"><c:out value="${selectedAddress.m_addressCity}"/></h2>
-                                <h3 style="text-align:center;font-size: 15px;
-color: #999;
-letter-spacing: 1px;
-font-weight: 400;"><c:out value="${selectedAddress.m_addressZipCode}"/></h3>
-
-                            <a href="modifyAddress?address=${selectedAddress.m_addressKey}" class="btn">Modifier une adresse</a>
-                            <a href="/?deleteAddress=${selectedAddress.m_addressKey}" class="btn">Supprimer une adresse</a>
+                            <div style="z-index: 99;color: #fff;background-color: rgba(0,0,0, .7);padding: 15px 20px;height: 245px;opacity:1;position:absolute;top: 25%;left: 25%;right:25%;">
+                                <h1 style="font-size: 4rem;text-align: center;font-weight: 100;color: #fff;margin: 35px 0 15px;"><c:out value="${selectedAddress.m_addressNumber}"/> <c:out value="${selectedAddress.m_addressStreet}"/></h1>
+                                <h2 style="text-align:center;font-size: 25px;color: #bbb;letter-spacing: 2px;font-weight: 100;"><c:out value="${selectedAddress.m_addressCity}"/></h2>
+                                <h3 style="text-align:center;font-size: 15px;color: #999;letter-spacing: 1px;font-weight: 400;"><c:out value="${selectedAddress.m_addressZipCode}"/></h3>
+                                <div style="width: 300px; margin: 20px auto;">
+                                    <a href="modifyAddress?address=${selectedAddress.m_addressKey}" class="btn btn-default">Modifier l'adresse</a>
+                                    <a href="/?deleteAddress=${selectedAddress.m_addressKey}" onclick="javascript:return confirm('Attention, cette action est irréversible. Continuer ?');" class="btn btn-default">Supprimer l'adresse</a>
+                                </div>
 
                             </div>
 
@@ -518,10 +324,6 @@ font-weight: 400;"><c:out value="${selectedAddress.m_addressZipCode}"/></h3>
                     }
 
                 });
-
-
-
-                $('.randomuser').attr("src", "http://api.randomuser.me/portraits/men/"+Math.floor((Math.random() * 100))+".jpg");
             });
         </script>
 
