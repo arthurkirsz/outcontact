@@ -7,6 +7,9 @@ Promotion : 5A ESIEA
 
 Groupe : KIRSZ Arthur PORCHERON David LEVIN Warren
 
+Lien vers l'application déployée sur Google Appengine :
+http://out-contact.appspot.com/
+
 Documentation d'installation :
 GitHub https://github.com/arthurkirsz/outcontact.git
 
