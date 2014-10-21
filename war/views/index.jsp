@@ -226,7 +226,7 @@
                                     <li style="position:relative; overflow:hidden;margin: 0px;margin-bottom: 20px;  width: 95%;height: 100px;border: 1px solid #333;">
 
                                             
-                                            <img src='https://maps.googleapis.com/maps/api/staticmap?center=${deliveryAddressItem}&zoom=13&size=600x150&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284' style="position:absolute;top:0px;left:0px;">
+                                            <img src='https://maps.googleapis.com/maps/api/staticmap?center=${billingAddressItem}&zoom=13&size=600x150&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284' style="position:absolute;top:0px;left:0px;">
 
                                             <address style="position: absolute;top: 0px;left: 0px;display: block;background: rgba(0,0,0,.7);color: #fff;padding: 10px;height: 100px;width: 100%;text-align: center;line-height: 40px;font-size: 25px;font-weight: 100;letter-spacing: 1px;">
                                                 <c:out value="${billingAddressItem}"/> <a href="/?contact=${selectedContact.m_contactKey}&deleteAddress=${billingAddressItem.m_addressKey}&type=billing" onclick="javascript:return confirm('Attention, cette action est irréversible. Continuer ?');" class="cross-button">x</a>
@@ -275,7 +275,7 @@
                             <div style="position: absolute; top: 0px; left: 0px; bottom: 0px ; right: 0px;background: #000;opacity:.4; z-index:10;">
                             </div>
 
-                            <img src='https://maps.googleapis.com/maps/api/staticmap?center=${selectedAddress.m_addressNumber}+${selectedAddress.m_addressStreet}+${selectedAddress.m_addressZipCode}+${selectedAddress.m_addressCity}&zoom=13&size=2024x350&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284' style="position: absolute; top: 0px; left: 0px; bottom: 0px ; right: 0px;height:100%;opacity:1; z-index:3;">
+                            <img src='https://maps.googleapis.com/maps/api/staticmap?center=${selectedAddress.m_addressNumber}+${selectedAddress.m_addressStreet}+${selectedAddress.m_addressZipCode}+${selectedAddress.m_addressCity}&zoom=13&size=2024x350&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284' style="position: absolute; top: 0px; left: 0px; bottom: 0px ; right: 0px;height:100%;opacity:1; z-index:3;" class="map">
                             
                         
 

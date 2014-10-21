@@ -1,7 +1,7 @@
 .blue-toggle {
 	margin: auto;
 	display: block;
-	width: 420px;
+	width: 440px;
 	top: 30px;
 
 	button {
@@ -57,7 +57,8 @@
 
 .plus-button {
 	float: right;display: block;background: #0088CC;color: #fff;border-radius: 20px;width: 23px;
-	height: 23px;margin-top: -3px;margin-right: 5px;text-align: center;line-height: 20px;font-size: 17px; 
+	height: 23px;margin-top: -3px;margin-right: 5px;text-align: center;
+  line-height: 23px;font-size: 20px;
 	&:hover {
 		text-decoration: none;
 		background: #0277B2;
@@ -72,6 +73,13 @@
 		background: #111;
 		color: #fff;
 	}
+}
+
+@media(min-width:1400px) {
+  .map {
+    width:100%;
+
+  }
 }
 
 /* Tube */

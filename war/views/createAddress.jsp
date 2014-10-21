@@ -20,7 +20,7 @@
 								<label for="m_addressNumber">
 									<spring:message code="addressForm.number" />
 								</label>
-								<form:input basename="messages" path="m_addressNumber"  class="form-control" id="m_addressNumber" placeholder="Numéro de rue"/>
+								<form:input basename="messages" path="m_addressNumber"  class="form-control" id="m_addressNumber" />
 
 								<form:errors basename="errors" path="m_addressNumber" cssStyle="color: #ff0000;"/>
 							</div>
@@ -29,7 +29,7 @@
 								<label for="m_addressStreet">
 									<spring:message code="addressForm.street" />
 								</label>
-								<form:input basename="messages" path="m_addressStreet"  class="form-control" id="m_addressStreet" placeholder="Numéro de rue"/>
+								<form:input basename="messages" path="m_addressStreet"  class="form-control" id="m_addressStreet" />
 
 								<form:errors basename="errors" path="m_addressStreet" cssStyle="color: #ff0000;"/>
 							</div>
@@ -38,7 +38,7 @@
 								<label for="m_addressZipCode">
 									<spring:message code="addressForm.zipCode" />
 								</label>
-								<form:input basename="messages" path="m_addressZipCode"  class="form-control" id="m_addressZipCode" placeholder="Numéro de rue"/>
+								<form:input basename="messages" path="m_addressZipCode"  class="form-control" id="m_addressZipCode" />
 								<form:errors basename="errors" path="m_addressZipCode" cssStyle="color: #ff0000;"/>
 							</div>
 
@@ -46,14 +46,8 @@
 								<label for="m_addressCity">
 									<spring:message code="addressForm.city" />
 								</label>
-								<form:input basename="messages" path="m_addressCity"  class="form-control" id="m_addressCity" placeholder="Numéro de rue"/>
+								<form:input basename="messages" path="m_addressCity"  class="form-control" id="m_addressCity" />
 								<form:errors basename="errors" path="m_addressCity" cssStyle="color: #ff0000;"/>
-							</div>
-
-							<div class="form-group has-error has-feedback">
-							  <label class="control-label" for="inputError2">Input Test error</label>
-							  <input type="text" class="form-control" id="inputError2">
-							  <span class="glyphicon glyphicon-remove form-control-feedback"></span>
 							</div>
 
 
