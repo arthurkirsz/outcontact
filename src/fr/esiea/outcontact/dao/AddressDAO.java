@@ -15,7 +15,7 @@ public class AddressDAO {
 	
 	static {
 		m_addressesMap.put(1, new AddressModel("1","avenue la ronde", "75010", "Paris", 1));
-		m_addressesMap.put(2, new AddressModel("256","rue du général leclerc", "75014", "Paris", 2));	
+		m_addressesMap.put(2, new AddressModel("256","rue du general leclerc", "75014", "Paris", 2));	
 	}
 
 	/**
